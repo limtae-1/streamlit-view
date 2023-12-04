@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+import matplotlib
+matplotlib.use('Agg')
 st.header("Visit Counting")
 
 @st.cache_data
@@ -12,7 +13,7 @@ def load_data():
     return df
 
 df = load_data()
-tab1, tab2, tab3 = st.tabs(['raw data', 'scatter', 'bar'])
+tab1, tab2, tab3, tab4 = st.tabs(['raw data', 'scatter', 'bar','test'])
 
 with tab1:
     st.dataframe(df)
@@ -68,5 +69,4 @@ with tab3:
                  horizontalalignment='center',
                  verticalalignment='bottom')
     st.pyplot(fig3)
-
 
