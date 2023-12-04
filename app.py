@@ -106,7 +106,7 @@ with tab4:
 
 #소스코드 소개 부분
 with tab5:
-    code='''
+    code0='''
 plt.scatter(df['mday'],df['dis'])
 plt.xticks(df['mday'].unique())     #x축 눈금 설정
 plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
@@ -161,4 +161,38 @@ for i, v in enumerate(x):
 
 plt.show()
 '''
-    st.code(code, language='python')
+    st.code(code0, language='python')
+
+st.divider() #경계선 표시
+
+code1='''
+from picozero import DistanceSensor
+from time import sleep, localtime
+
+#localtime() 의 튜플 값은
+#(연도, 달, 날, 시간, 분, 초, 요일[일~토/0~6], 1월1일부터 경과한 일 수)
+start_time=localtime()
+print(start_time)
+
+ds = DistanceSensor(echo=20, trigger=21) #거리측정 코드
+
+f = open('test030.csv', 'w') #피코 파일 경로랑 같이 있어야함
+f.write(f'{start_time}\n')
+#1시간 측정을 기준
+for i in range(3600):
+    dscm=ds.distance * 100
+    print(dscm)
+    sleep(1)
+    if dscm<100:
+        real_time=localtime()
+        data=str(dscm)
+        f.write("%s" f'{real_time}\n' %data) 
+    else:
+        continue
+
+end_time=localtime()
+f.write(f'{end_time}\n')
+f.close()
+'''
+    st.code(code1, language='python')
+
