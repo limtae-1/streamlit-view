@@ -33,7 +33,7 @@ with tab2:
     plt.xticks(df['mday'].unique())    
     plt.yticks(np.arange(0,101,10))
     plt.xlabel('2023.11.27.-2023.12.01.')
-    plt.ylabel('Visit Distance')
+    plt.ylabel('Visit Counting')
     st.pyplot(fig2)
 
     st.divider() #경계선 표시
@@ -43,7 +43,7 @@ with tab2:
     plt.scatter(df['mday'],df['dis'])
     plt.title('Visit Counting Scatter')
     plt.xlabel("2023.11.27.-2023.12.01.")
-    plt.ylabel("Visit Distance")
+    plt.ylabel("visit counting")
     plt.xticks(np.arange(0,32,1))     #x축 눈금 설정
     plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
     plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
@@ -57,7 +57,7 @@ with tab3:
     plt.bar(sorted(df["mday"].unique()), df.groupby('mday')['dis'].count(), color="green")
     plt.title('Visit Counting Bar')
     plt.xlabel("2023.11.27.-2023.12.01.")
-    plt.ylabel("Visit Counting")
+    plt.ylabel("visit counting")
     plt.xticks(np.arange(1,32,1))     #x축 눈금 설정
     plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
     #x축의 데이터 설정 lenth는 눈금의 길이, pad는 눈금과 레이블의 거리, labelsize는 레이블의 크기
@@ -71,7 +71,7 @@ with tab3:
     plt.bar(sorted(df["mday"].unique()), df.groupby('mday')['dis'].count(), color="green")
     plt.title('Visit Counting Bar')
     plt.xlabel("2023.11.27.-2023.12.01.")
-    plt.ylabel("Visit Counting")
+    plt.ylabel("visit counting")
     plt.xticks(np.arange(1,32,1))     #x축 눈금 설정
     plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
 
@@ -99,14 +99,14 @@ with tab4:
     plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
 
     plt.xlabel("2023.11.27.-2023.12.01.")
-    plt.ylabel("Visit Counting")
+    plt.ylabel("visit counting")
 
     plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
     st.pyplot(fig4)
 
 #소스코드 소개 부분
 with tab5:
-    code0='''
+    code='''
 plt.scatter(df['mday'],df['dis'])
 plt.xticks(df['mday'].unique())     #x축 눈금 설정
 plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
@@ -161,9 +161,7 @@ for i, v in enumerate(x):
 
 plt.show()
 '''
-    st.code(code0, language='python')
-
-st.divider() #경계선 표시
+    st.code(code, language='python')
 
 
     code1='''
@@ -196,3 +194,4 @@ f.write(f'{end_time}\n')
 f.close()
 '''
     st.code(code1, language='python')
+
