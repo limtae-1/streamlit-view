@@ -196,5 +196,3 @@ f.write(f'{end_time}\n')
 f.close()
 '''
     st.code(code1, language='python')
-
-
