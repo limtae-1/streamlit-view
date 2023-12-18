@@ -16,7 +16,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(['원본 데이터', '산점도 그래프
 
 with tab1:
     st.subheader("초음파 센서를 활용한 수집된 데이터")
-    st.write("2023.11.27.-2023.12.14. 까지의 데이터")
+    st.write("2023.11.27.-2023.12.15. 까지의 데이터")
     st.dataframe(df, height=400)
     st.divider()
     st.subheader("데이터 수집 방법")
@@ -32,7 +32,7 @@ with tab2:
     plt.title('Visit Counting Scatter')
     plt.xticks(df['mday'].unique())    
     plt.yticks(np.arange(0,101,10))
-    plt.xlabel('2023.11.27.-2023.12.14.')
+    plt.xlabel('2023.11.27.-2023.12.15.')
     plt.ylabel('Visit Counting')
     st.pyplot(fig2)
 
@@ -42,10 +42,10 @@ with tab2:
     fig2 = plt.figure() # 여기부터 그래프영역
     plt.scatter(df['mday'],df['dis'])
     plt.title('Visit Counting Scatter')
-    plt.xlabel("2023.11.27.-2023.12.14.")
+    plt.xlabel("2023.11.27.-2023.12.15.")
     plt.ylabel("visit counting")
     plt.xticks(np.arange(0,32,1))     #x축 눈금 설정
-    plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
+    plt.yticks(np.arange(0,301,10))   #y축 눈금 설정
     plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
     st.pyplot(fig2)
 
@@ -56,10 +56,10 @@ with tab3:
     fig3 = plt.figure() # 여기부터 그래프영역
     plt.bar(sorted(df["mday"].unique()), df.groupby('mday')['dis'].count(), color="green")
     plt.title('Visit Counting Bar')
-    plt.xlabel("2023.11.27.-2023.12.14.")
+    plt.xlabel("2023.11.27.-2023.12.15.")
     plt.ylabel("visit counting")
     plt.xticks(np.arange(1,32,1))     #x축 눈금 설정
-    plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
+    plt.yticks(np.arange(0,301,10))   #y축 눈금 설정
     #x축의 데이터 설정 lenth는 눈금의 길이, pad는 눈금과 레이블의 거리, labelsize는 레이블의 크기
     plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
 
@@ -70,10 +70,10 @@ with tab3:
     st.subheader("횟수를 볼 수 있는 막대그래프")
     plt.bar(sorted(df["mday"].unique()), df.groupby('mday')['dis'].count(), color="green")
     plt.title('Visit Counting Bar')
-    plt.xlabel("2023.11.27.-2023.12.14.")
+    plt.xlabel("2023.11.27.-2023.12.15.")
     plt.ylabel("visit counting")
     plt.xticks(np.arange(1,32,1))     #x축 눈금 설정
-    plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
+    plt.yticks(np.arange(0,301,10))   #y축 눈금 설정
 
     #x축의 데이터 설정 lenth는 눈금의 길이, pad는 눈금과 레이블의 거리, labelsize는 레이블의 크기
     plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
@@ -96,9 +96,9 @@ with tab4:
     plt.plot(sorted(df["mday"].unique()), df.groupby('mday')['dis'].count(), "bs")
     plt.title('Visit Counting Dot')
     plt.xticks(np.arange(1,32,1))     #x축 눈금 설정
-    plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
+    plt.yticks(np.arange(0,301,10))   #y축 눈금 설정
 
-    plt.xlabel("2023.11.27.-2023.12.14.")
+    plt.xlabel("2023.11.27.-2023.12.15.")
     plt.ylabel("visit counting")
 
     plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
@@ -118,10 +118,10 @@ plt.show()
 ===경계선===
             
 plt.scatter(df['mday'],df['dis'])
-plt.xlabel("2023.11.27.-2023.12.14.")
+plt.xlabel("2023.11.27.-2023.12.15.")
 plt.ylabel("visit counting")
 plt.xticks(np.arange(0,32,1))     #x축 눈금 설정
-plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
+plt.yticks(np.arange(0,301,10))   #y축 눈금 설정
 
 plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
 plt.show()
@@ -129,10 +129,10 @@ plt.show()
 ===경계선===
             
 plt.bar(sorted(df["mday"].unique()), df.groupby('mday')['dis'].count(), color="green")
-plt.xlabel("2023.11.27.-2023.12.14.")
+plt.xlabel("2023.11.27.-2023.12.15.")
 plt.ylabel("visit counting")
 plt.xticks(np.arange(1,32,1))     #x축 눈금 설정
-plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
+plt.yticks(np.arange(0,301,10))   #y축 눈금 설정
 
 #x축의 데이터 설정 lenth는 눈금의 길이, pad는 눈금과 레이블의 거리, labelsize는 레이블의 크기
 plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
@@ -141,10 +141,10 @@ plt.show()
 ===경계선===
 
 plt.bar(sorted(df["mday"].unique()), df.groupby('mday')['dis'].count(), color="green")
-plt.xlabel("2023.11.27.-2023.12.14.")
+plt.xlabel("2023.11.27.-2023.12.15.")
 plt.ylabel("visit counting")
 plt.xticks(np.arange(1,32,1))     #x축 눈금 설정
-plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
+plt.yticks(np.arange(0,301,10))   #y축 눈금 설정
 
 #x축의 데이터 설정 lenth는 눈금의 길이, pad는 눈금과 레이블의 거리, labelsize는 레이블의 크기
 plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
