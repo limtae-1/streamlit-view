@@ -45,7 +45,7 @@ with tab2:
     plt.xlabel("2023.11.27.-2023.12.15.")
     plt.ylabel("visit counting")
     plt.xticks(np.arange(0,32,1))     #x축 눈금 설정
-    plt.yticks(np.arange(0,301,10))   #y축 눈금 설정
+    plt.yticks(np.arange(0,101,10))   #y축 눈금 설정
     plt.tick_params(axis='x', direction='in', length=2, pad=2, labelsize=7, width=2, labelcolor='red')
     st.pyplot(fig2)
 
